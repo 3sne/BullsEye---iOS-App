@@ -13,9 +13,11 @@ class ViewController: UIViewController {
     var currentSliderValue: Int = 0
     var targetValue: Int = 0
     var score: Int = 0
+    var round: Int = 0
     @IBOutlet weak var theOgSlider: UISlider!
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +31,31 @@ class ViewController: UIViewController {
 
     @IBAction func showAlert() {
         let difference: Int = abs(currentSliderValue - targetValue)
-        let points: Int = 100 - difference
+        var points: Int = 100 - difference
+        
+        let customMsg: String
+        let customTitle: String
+        if difference == 0 {
+            points += 100
+            customTitle = "-=10/10 IGN=-"
+            customMsg = "You Scored \(points) Points\nHere's 100 Bonus Points For You."
+        } else if difference == 1 {
+            points += 50
+            customTitle = "Oof"
+            customMsg = "You Scored \(points) Points\nYou, friend, deserve 50 more points, it was really close."
+        } else if difference < 10 {
+            customTitle = "Almost Had It :("
+            customMsg = "You Scored \(points) Points\nI've always believed in you. Go again."
+        } else if difference < 50 {
+            customTitle = "YOU NEED TO FOCUS MORE"
+            customMsg = "You Scored \(points) Points\nLook At Your Phone Please."
+        } else {
+            customTitle = "-.- Plastic Eyes -.-"
+            customMsg = "You Scored \(points) Points\nThis is so sad. Alexa, Play Despacito."
+        }
         score += points
         
-        let customMsg:String = "Debug: Current Value: \(currentSliderValue)" + "\nDebug: Target Value: \(targetValue)" + "\nDebug: Difference: \(difference)" + "\nDebug: Point Gained: \(points)"
-        let alert = UIAlertController(title: "Hello World", message: customMsg, preferredStyle: .alert)
+        let alert = UIAlertController(title: customTitle, message: customMsg, preferredStyle: .alert)
         let action = UIAlertAction(title: "Cool", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
@@ -48,12 +70,14 @@ class ViewController: UIViewController {
         currentSliderValue = Int(arc4random_uniform(100))
         targetValue = Int(arc4random_uniform(100))
         theOgSlider.value = Float(currentSliderValue)
+        round += 1
         updateLabels()
     }
     
     func updateLabels() {
         targetLabel.text = String(targetValue)
         scoreLabel.text = String(score)
+        roundLabel.text = String(round)
     }
 }
 
