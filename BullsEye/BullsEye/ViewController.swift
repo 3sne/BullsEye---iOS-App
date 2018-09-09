@@ -30,6 +30,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAlert() {
+        //Calculates the score for a round after user taps the 'submit' button. Also creates an alert to display the information regarding player performance and perks, if applicable.
+        
         let difference: Int = abs(currentSliderValue - targetValue)
         var points: Int = 100 - difference
         
@@ -58,7 +60,7 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: customTitle, message: customMsg, preferredStyle: .alert)
         let action = UIAlertAction(title: "Cool", style: .default, handler: nil)
         alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil) //present() in swift is non-blocking, so we needed to implement a closure on action button to make next round loading event driven, i.e., after pressing action inside alert
         startNewRound()
     }
     
@@ -67,6 +69,8 @@ class ViewController: UIViewController {
     }
     
     func startNewRound() {
+        //generates initials for a new round within the same session
+        
         currentSliderValue = Int(arc4random_uniform(100))
         targetValue = Int(arc4random_uniform(100))
         theOgSlider.value = Float(currentSliderValue)
@@ -75,6 +79,8 @@ class ViewController: UIViewController {
     }
     
     func updateLabels() {
+        //updates the game information labels in the View
+        
         targetLabel.text = String(targetValue)
         scoreLabel.text = String(score)
         roundLabel.text = String(round)
