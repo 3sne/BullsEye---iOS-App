@@ -2,6 +2,6 @@
 
 iOS App designed as a follow along to Ray Wenderlich's Course.
 
-Status: 
-~~Work in progress~~
-Functional, Developing UI Styling
+Status: <br />
+~~Work in progress~~ <br />
+Functional, Developing UI Styling <br />
