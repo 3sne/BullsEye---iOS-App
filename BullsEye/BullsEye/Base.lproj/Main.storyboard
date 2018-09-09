@@ -171,7 +171,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90r-C4-Ha3">
-                                <rect key="frame" x="362" y="289" width="89" height="36"/>
+                                <rect key="frame" x="362" y="292" width="89" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
@@ -179,18 +179,18 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3sne" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmE-af-sGD">
-                                <rect key="frame" x="225" y="36" width="362" height="37"/>
+                                <rect key="frame" x="225" y="39" width="362" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pp" translatesAutoresizingMaskIntoConstraints="NO" id="vhl-de-Q3t">
-                                <rect key="frame" x="210" y="100" width="175" height="175"/>
+                                <rect key="frame" x="189" y="100" width="175" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tai-lE-LaY">
-                                <rect key="frame" x="404" y="100" width="240" height="166.66666666666666"/>
+                                <rect key="frame" x="383" y="100" width="240" height="166.66666666666666"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Hello fellow kids, I am writing this because the instructor asked me to. I don't wanna tell you anything..even if you beg on all fours. Actually, no, it depends on who is asking. But remember, don't be evil. Thanks for visiting this page, it took a while to find this troll face.</string>
