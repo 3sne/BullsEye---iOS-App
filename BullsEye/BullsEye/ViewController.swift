@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //currentSliderValue = Int(theOgSlider.value) //to set true init value of slider in currentSliderValue
-        startNewRound()
+        startNewGame()
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,14 +58,24 @@ class ViewController: UIViewController {
         score += points
         
         let alert = UIAlertController(title: customTitle, message: customMsg, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Cool", style: .default, handler: nil)
+        let action = UIAlertAction(title: "Cool", style: .default, handler: {
+            //this is a closure, similar to callback function is javascript
+            action in
+            self.startNewRound()
+        })
         alert.addAction(action)
         present(alert, animated: true, completion: nil) //present() in swift is non-blocking, so we needed to implement a closure on action button to make next round loading event driven, i.e., after pressing action inside alert
-        startNewRound()
     }
     
     @IBAction func sliderMoved(_ slider: UISlider) {
         currentSliderValue = Int(slider.value.rounded())
+    }
+    
+    @IBAction func startNewGame() {
+        //resets the game data as if the app was loaded a-new
+        score = 0
+        round = 0
+        startNewRound()
     }
     
     func startNewRound() {
