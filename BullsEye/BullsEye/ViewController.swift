@@ -23,6 +23,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //currentSliderValue = Int(theOgSlider.value) //to set true init value of slider in currentSliderValue
         startNewGame()
+        
+        //for custom slider:
+        let thumbImageNormal = #imageLiteral(resourceName: "SliderThumb-Normal")
+        theOgSlider.setThumbImage(thumbImageNormal, for: .normal)
+        
+        let thumbImageHighlighted = #imageLiteral(resourceName: "SliderThumb-Highlighted")
+        theOgSlider.setThumbImage(thumbImageHighlighted, for: .highlighted)
+        
+        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        
+        let trackLeftImage = #imageLiteral(resourceName: "SliderTrackLeft")
+        let trackLeftResizeable = trackLeftImage.resizableImage(withCapInsets: insets)
+        theOgSlider.setMinimumTrackImage(trackLeftResizeable, for: .normal)
+        
+        let trackRightImage = #imageLiteral(resourceName: "SliderTrackRight")
+        let trackRightResizeable = trackRightImage.resizableImage(withCapInsets: insets)
+        theOgSlider.setMaximumTrackImage(trackRightResizeable, for: .normal)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
